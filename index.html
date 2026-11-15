@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amira Hagag UGC Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@700;800&family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&family=Readex+Pro:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* Layout idea: a creator's sketchbook — ink on soft paper, colored-pencil accents, 9:16 video cards in a gallery wall */
+  --paper:#fbf6f1;
+  --ink:#1d1a24;
+  --muted:#6b6375;
+  --pink:#ec4f8f;
+  --sky:#3aa0e0;
+  --sun:#ffc93d;
+  --line:#e7dcd3;
+  --card:#ffffff;
+  --display:"Bricolage Grotesque", "DM Sans", system-ui, sans-serif;
+  --body:"DM Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --cute:"Baloo Bhaijaan 2", "Readex Pro", system-ui, sans-serif;
+  --arabic:"Readex Pro", "DM Sans", system-ui, sans-serif;
+  color-scheme: light;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--body);
+  background-image:radial-gradient(var(--line) 1px, transparent 1px);background-size:22px 22px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.05}
+.ar{font-family:var(--arabic)}
+
+/* Hero */
+.hero{position:relative;padding:56px 0 30px;text-align:center;display:flex;flex-direction:column;align-items:center}
+.name{font-family:var(--cute);font-weight:800;font-size:clamp(56px,11vw,128px);line-height:1.05;margin:0 0 18px;letter-spacing:-.01em;color:var(--pink);
+  text-shadow:3px 3px 0 var(--paper),6px 6px 0 var(--ink)}
+.name-en{font-family:var(--cute);font-weight:700;font-size:clamp(22px,3vw,30px);margin:6px 0 10px;letter-spacing:.02em}
+.role{display:inline-block;margin:0 0 30px;padding:8px 22px;border:2px solid var(--ink);border-radius:999px;background:var(--sun);
+  font:800 clamp(15px,2vw,19px) var(--body);letter-spacing:.06em;text-transform:uppercase;box-shadow:4px 4px 0 var(--ink);transform:rotate(-2deg)}
+.stickers{list-style:none;margin:0 0 34px;padding:0;display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+.stickers li{width:148px;background:#fff;padding:8px 8px 6px;border-radius:14px;border:2px solid var(--ink);box-shadow:5px 5px 0 var(--b);transform:rotate(var(--r));transition:transform .2s}
+.stickers li:hover{transform:rotate(0) scale(1.06)}
+.stickers img{display:block;width:100%;aspect-ratio:1;object-fit:cover;border-radius:8px}
+.stickers span{display:block;font:800 15px var(--cute);padding-top:5px;text-transform:uppercase;letter-spacing:.03em}
+.ctas{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 20px;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid var(--ink);transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.ghost{background:var(--card)}
+.doodle{position:absolute;width:44px;height:44px}
+.d1{top:60px;left:6%;transform:rotate(-14deg)}
+.d2{top:46px;right:8%;width:52px;height:52px}
+.d3{top:220px;left:12%;width:34px;height:34px}
+.d4{top:210px;right:13%;transform:rotate(12deg)}
+
+/* Work */
+.section{padding:36px 0}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:16px;margin-bottom:22px}
+h2{font-size:clamp(30px,4vw,44px);font-weight:800}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 14px var(--body);padding:8px 14px;border-radius:999px;border:2px solid var(--ink);background:var(--card);color:var(--ink);cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--pink);border-color:var(--pink);color:#fff}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.card[hidden]{display:none}
+.vid{position:relative;aspect-ratio:9/16;background:#111}
+.vid video{width:100%;height:100%;object-fit:cover;display:block;background:#111}
+.play{position:absolute;inset:0;width:100%;border:0;background:rgba(0,0,0,.12);cursor:pointer;display:grid;place-items:center;align-content:center;gap:10px}
+.play .pi{width:74px;height:74px;border-radius:50%;background:var(--pink);border:3px solid #fff;box-shadow:0 6px 20px rgba(0,0,0,.3);position:relative}
+.play .pi::after{content:"";position:absolute;left:29px;top:22px;border-left:24px solid #fff;border-top:15px solid transparent;border-bottom:15px solid transparent}
+.play .pl{display:none;color:#fff;font:700 14px var(--body);background:rgba(0,0,0,.6);padding:4px 12px;border-radius:999px}
+.play.loading .pl{display:block}
+.play.loading .pi{opacity:.6}
+.play[hidden]{display:none}
+.dur{position:absolute;top:12px;right:12px;background:rgba(0,0,0,.65);color:#fff;font:600 12px var(--body);padding:4px 9px;border-radius:999px;font-variant-numeric:tabular-nums;pointer-events:none}
+.meta{padding:16px 18px 20px;display:grid;gap:8px}
+.tag{justify-self:start;font:700 12px var(--body);letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--tint,#f3eef9)}
+.meta h3{font-size:21px;font-weight:800}
+.meta p{margin:0;color:var(--muted);font-size:15px}
+
+/* Services */
+.services{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.svc{border-top:4px solid var(--c);padding-top:14px}
+.svc h3{font-size:20px;margin-bottom:6px}
+.svc p{margin:0;color:var(--muted);font-size:15px}
+
+/* Contact */
+.contact{margin:36px 0 56px;background:var(--ink);color:var(--paper);border-radius:28px;padding:40px;display:grid;grid-template-columns:1.2fr 1fr;gap:30px;align-items:center}
+.contact h2{color:var(--paper)}
+.contact p{color:#cfc8d8;margin:10px 0 0;max-width:42ch}
+.rows{display:grid;gap:10px}
+.row{display:flex;justify-content:space-between;gap:12px;align-items:center;background:rgba(255,255,255,.07);border-radius:14px;padding:12px 16px;text-decoration:none}
+.row small{color:#a79fb2;font-size:13px}
+.row strong{font-weight:600;word-break:break-all;text-align:right}
+.todo{border:1.5px dashed var(--sun);color:var(--sun);border-radius:8px;padding:1px 8px;font-weight:600}
+footer{text-align:center;color:var(--muted);font-size:13px;padding:0 0 28px}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;padding-top:36px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+  .services{grid-template-columns:repeat(2,1fr)}
+  .contact{grid-template-columns:1fr;padding:28px}
+}
+@media (max-width:520px){
+  .stickers li{width:42%}
+  .doodle{display:none}
+  .grid{grid-template-columns:1fr;max-width:380px;margin:0 auto}
+  .services{grid-template-columns:1fr}
+  .facts{grid-template-columns:1fr 1fr}
+}
+@media (prefers-reduced-motion:reduce){.stickers li{transition:none}.btn{transition:none}.btn:hover{transform:none}}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <svg class="doodle d1" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 C6 24 4 14 11 9 C16 6 20 11 20 13 C20 11 24 6 29 9 C36 14 34 24 20 34Z" fill="var(--pink)"/></svg>
+    <svg class="doodle d2" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 3 L24.5 15 L37 15.5 L27 23.5 L30.5 36 L20 28.5 L9.5 36 L13 23.5 L3 15.5 L15.5 15Z" fill="var(--sun)" stroke="var(--ink)" stroke-width="2" stroke-linejoin="round"/></svg>
+    <svg class="doodle d3" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 V36 M4 20 H36 M9 9 L31 31 M31 9 L9 31" stroke="var(--sky)" stroke-width="3" stroke-linecap="round"/></svg>
+    <svg class="doodle d4" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 34 C6 24 4 14 11 9 C16 6 20 11 20 13 C20 11 24 6 29 9 C36 14 34 24 20 34Z" fill="none" stroke="var(--sky)" stroke-width="3"/></svg>
+    <h1 class="name">Amira Hagag</h1>
+    <p class="role">Content Creator &amp; UGC</p>
+    <ul class="stickers" aria-label="Services">
+      <li style="--r:-6deg;--b:var(--pink)"><img src="face1.jpg" alt="AI video scene of Amira on a glowing stage"><span>AI Videos</span></li>
+      <li style="--r:5deg;--b:var(--sky)"><img src="face3.jpg" alt="Amira as an animated stick-figure character"><span>Animated Videos</span></li>
+      <li style="--r:-4deg;--b:var(--sun)"><img src="svc_vlog.jpg" alt="Villa pool from a vlog tour"><span>Vlogs</span></li>
+      <li style="--r:6deg;--b:var(--pink)"><img src="svc_vo.jpg" alt="Amira recording at a studio microphone"><span>Voice Over</span></li>
+      <li style="--r:-5deg;--b:var(--sky)"><img src="svc_asmr.jpg" alt="Close-up of a sticky mess before cleaning"><span>ASMR Videos</span></li>
+      <li style="--r:4deg;--b:var(--sun)"><img src="svc_ugc.jpg" alt="Hand holding a Black+Decker product"><span>UGC Videos</span></li>
+    </ul>
+    <div class="ctas">
+      <a class="btn primary" href="#contact">Work with me</a>
+      <a class="btn ghost" href="https://www.tiktok.com/@amira_hashem_">TikTok @amira_hashem_</a>
+    </div>
+  </header>
+
+  <section class="section" id="work" aria-labelledby="work-h">
+    <div class="sec-head">
+      <h2 id="work-h">My work</h2>
+      <div class="chips" role="group" aria-label="Filter videos">
+        <button class="chip" id="f-all" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" id="f-anim" data-f="anim" aria-pressed="false">Animated stories</button>
+        <button class="chip" id="f-product" data-f="product" aria-pressed="false">Product demos</button>
+        <button class="chip" id="f-place" data-f="place" aria-pressed="false">Places &amp; stays</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <article class="card" data-cat="anim">
+        <div class="vid"><video data-src="v1.mp4" data-parts="v1-1.bin,v1-2.bin" poster="p1.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">2:33</span></div>
+        <div class="meta"><span class="tag" style="--tint:#fde1ec">Animated story</span><h3>The bride who has to do it all</h3><p>A hand-drawn stick-figure story with my face, built around a moment every bride-to-be knows.</p></div>
+      </article>
+
+      <article class="card" data-cat="anim">
+        <div class="vid"><video data-src="v4.mp4" data-parts="v4-1.bin,v4-2.bin" poster="p4.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">1:39</span></div>
+        <div class="meta"><span class="tag" style="--tint:#fde1ec">Animated story</span><h3>From wedding dress to new home</h3><p>A second illustrated story: the dress, the house, and life after the wedding.</p></div>
+      </article>
+
+      <article class="card" data-cat="product">
+        <div class="vid"><video data-src="v2.mp4" data-parts="v2-1.bin,v2-2.bin" poster="p2.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">3:11</span></div>
+        <div class="meta"><span class="tag" style="--tint:#dff0fb">Product demo</span><h3>Cordless vacuum, put to work</h3><p>Hands-on demo of a Black+Decker vacuum on real household mess.</p></div>
+      </article>
+
+      <article class="card" data-cat="product">
+        <div class="vid"><video data-src="v3.mp4" data-parts="v3-1.bin,v3-2.bin" poster="p3.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">2:12</span></div>
+        <div class="meta"><span class="tag" style="--tint:#dff0fb">Product demo</span><h3>Steam cleaner, before and after</h3><p>Unboxing and a real cleaning test showing the result up close.</p></div>
+      </article>
+
+      <article class="card" data-cat="place">
+        <div class="vid"><video data-src="v5.mp4" data-parts="v5-1.bin,v5-2.bin" poster="p5.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">1:32</span></div>
+        <div class="meta"><span class="tag" style="--tint:#fff1c7">Real estate</span><h3>Villa with a private pool</h3><p>A walkthrough tour that shows the space the way a buyer or guest would see it.</p></div>
+      </article>
+
+      <article class="card" data-cat="place">
+        <div class="vid"><video data-src="v6.mp4" data-parts="v6-1.bin,v6-2.bin" poster="p6.jpg" preload="none" playsinline></video><button class="play" type="button" aria-label="Play video"><span class="pi"></span><span class="pl">Loading…</span></button><span class="dur">3:34</span></div>
+        <div class="meta"><span class="tag" style="--tint:#fff1c7">Hospitality</span><h3>A night at the resort</h3><p>Evening experience video covering the venue, the atmosphere and the details.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="svc-h">
+    <div class="sec-head"><h2 id="svc-h">What I make for brands</h2></div>
+    <div class="services">
+      <div class="svc" style="--c:var(--pink)"><h3>Animated stories</h3><p>Illustrated stick-figure stories that carry your product inside a relatable plot.</p></div>
+      <div class="svc" style="--c:var(--sky)"><h3>Product demos</h3><p>Unboxing, testing and honest results for home and lifestyle products.</p></div>
+      <div class="svc" style="--c:var(--sun)"><h3>Property tours</h3><p>Walkthroughs of villas, apartments and compounds for developers and rentals.</p></div>
+      <div class="svc" style="--c:var(--ink)"><h3>Hospitality</h3><p>Hotels, resorts and restaurants filmed as an experience, not an ad.</p></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact" aria-labelledby="contact-h">
+    <div>
+      <h2 id="contact-h">Let's make your next video</h2>
+      <p>Send me your product or brief and I'll come back with a concept and a timeline.</p>
+      <p class="ar" lang="ar" dir="rtl">ابعتلي تفاصيل البراند وهرد عليك بفكرة ومعاد تسليم.</p>
+    </div>
+    <div class="rows">
+      <a class="row" href="https://www.tiktok.com/@amira_hashem_"><small>TikTok</small><strong>@amira_hashem_</strong></a>
+      <a class="row" href="mailto:Hagag.amira@icloud.com"><small>Email</small><strong>Hagag.amira@icloud.com</strong></a>
+      <a class="row" href="https://wa.me/201093954273"><small>WhatsApp</small><strong>01093954273</strong></a>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Amira Hagag · UGC Portfolio</footer>
+
+<script>
+// Videos load as blobs on tap, then play one at a time
+function pauseOthers(v){ document.querySelectorAll("video").forEach(function(o){ if(o!==v) o.pause(); }); }
+document.querySelectorAll(".vid").forEach(function(box){
+  var v=box.querySelector("video"), btn=box.querySelector(".play");
+  v.addEventListener("play",function(){ pauseOthers(v); });
+  btn.addEventListener("click",function(){
+    if(btn.classList.contains("loading")) return;
+    btn.classList.add("loading");
+    var start=function(url){
+      v.src=url; v.controls=true; btn.hidden=true;
+      var p=v.play(); if(p&&p.catch) p.catch(function(){});
+    };
+    var parts=(v.dataset.parts||"").split(",").filter(Boolean);
+    Promise.all(parts.map(function(p){ return fetch(p).then(function(r){ if(!r.ok) throw new Error(r.status); return r.blob(); }); }))
+      .then(function(bs){ start(URL.createObjectURL(new Blob(bs,{type:"video/mp4"}))); })
+      .catch(function(){ btn.classList.remove("loading"); });
+  });
+});
+// Filters
+var chips=document.querySelectorAll(".chip");
+chips.forEach(function(c){
+  c.addEventListener("click",function(){
+    chips.forEach(function(x){ x.setAttribute("aria-pressed", x===c ? "true" : "false"); });
+    var f=c.dataset.f;
+    document.querySelectorAll(".card").forEach(function(card){
+      card.hidden = !(f==="all" || card.dataset.cat===f);
+      if(card.hidden){ var v=card.querySelector("video"); if(v) v.pause(); }
+    });
+  });
+});
+</script>
+</body>
+</html>
